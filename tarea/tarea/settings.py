@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -84,8 +85,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-print("settings tarea linea 87")
-LOGIN_URL = '/login/'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -119,6 +118,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+print("settings tarea linea 87")
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL= reverse_lazy('Dashboard')
+LOGOUT_REDIRECT_URL= reverse_lazy('login')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

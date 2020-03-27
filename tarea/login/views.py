@@ -4,6 +4,7 @@ from django.shortcuts import redirect
 from django.contrib.auth import authenticate
 
 from django.contrib.auth import login as login_django
+from django.contrib.auth import logout
 
 class LoginClass(View):
     templates = 'login/login.html'
@@ -26,7 +27,7 @@ class LoginClass(View):
         #validacion
         if user_session is not None:
             print(user_session) #fue verdadero
-            login_django(render, user_session) #metodo raro que arruina todo :c
+            login_django(request, user_session) #metodo raro que arruina todo :c
             print("line 30")
             next_url = request.GET.get('next')#tambien raro pero obtiene un valor
             if next_url:
@@ -43,3 +44,10 @@ class LoginClass(View):
         return {
             'error':self.message,
         } 
+
+class l(View):
+    print("logo 49")
+    def get(self, request, *arg, **kargs):
+        print("l line 50")
+        logout(request)
+        return redirect('login:login')

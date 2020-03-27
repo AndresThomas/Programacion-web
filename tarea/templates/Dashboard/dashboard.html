@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+    {%load bootstrap4%}
+    {%bootstrap_css%}
 </head>
+
 <body>
-    <h1>Works this is Dashboard</h1>
+
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Dashboard</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active" style="margin-left: 500%;">
+                        <img src="https://cdn5.upsocl.com/wp-content/uploads/2039/11/watermelon-helmets3.jpg" 
+                        style= "width: 40px; height: 40px;"class="rounded-circle ">
+                    </li>
+                    <li class="nav-item dropdown">
+                        
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Options
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{%url 'logout' %}">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div style="text-align: center; border:solid black;">
+        <h1>Bienvenido {{user.username | upper}}</h1>
+    </div>
+    
+    {%bootstrap_javascript jquery='full'%}
 </body>
+
 </html>
