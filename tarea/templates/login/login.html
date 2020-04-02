@@ -30,7 +30,7 @@
             <div style="width: 270px;">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <span class="input-group-text" id="basic-addon1">🎮</span>
                     </div>
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username"
                         aria-describedby="basic-addon1" name="user" required>
@@ -42,7 +42,7 @@
             <div style="width: 270px;">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1"></span>
+                        <span class="input-group-text" id="basic-addon1">🔒</span>
                     </div>
                     <input type="password" class="form-control" placeholder="Password" aria-label="Username"
                         aria-describedby="basic-addon1" name="pass" required>
@@ -50,20 +50,17 @@
             </div>
             <!--end password-->
             {%if error %}
-            <span>{{error}}</span>
+            <span style="color: white;">{{error}}</span>
             {%endif%}
             <!--init button-->
-            <div class="text-center">
+            <div class="text-center form-check" style="margin-left:-20px">
                 <button type="submit" style="width: 270px;" class="btn btn-primary">Log in</button>
-                <br><br>
-                <!--error reverse match-->
-                <a href="{% url 'Landing:Landing' %}" >Ir a landing</a>
+                <br>
+                <a style="margin-left: -5%; margin-top: 5%;"href="{% url 'Landing:Landing' %}" >Ir a landing</a>
+                <a style="margin-left: 20%; margin-top: 5%;"href="{% url 'Register:Register' %}" >Registrate</a>
             </div>
             <!--end button-->
-            
         </div>
-
-
     </form>
     <!--end form-->
 

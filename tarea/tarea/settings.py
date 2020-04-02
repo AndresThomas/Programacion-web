@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'Registro',
     'Almacen',
     'Alumno',
-    'bootstrap4',
+    'bootstrap4','Register'
 ]
 
 MIDDLEWARE = [

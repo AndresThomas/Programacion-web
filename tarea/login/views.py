@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.views.generic import View
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate
-
 from django.contrib.auth import login as login_django
 from django.contrib.auth import logout
+from django.views.generic.edit import FormView
+
 
 class LoginClass(View):
     templates = 'login/login.html'
@@ -51,3 +52,4 @@ class l(View):
         print("l line 50")
         logout(request)
         return redirect('login:login')
+

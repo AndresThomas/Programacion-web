@@ -27,4 +27,5 @@ urlpatterns = [
     path('login/',include('login.urls'), name='login'),
     path('Dashboard/',include('Dashboard.urls'),name='Dashboard'),
     path('logout/',l.as_view() ,name ='logout'),
+    path('registro/',include('Register.urls'),name='Register')
 ]
